@@ -38,6 +38,11 @@ RUN set -eux; \
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
+WORKDIR /var/www
+
+RUN mkdir ./.composer
+
+RUN chmod -R 777 .composer
 
 WORKDIR /var/www/html
 
